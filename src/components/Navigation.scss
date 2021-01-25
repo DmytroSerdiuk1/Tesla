@@ -1,0 +1,52 @@
+.logo {
+    width: 100px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.navigation {
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    &-menu {
+        flex: 0.8;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__link {
+        text-transform: uppercase;
+        margin: 0 10px;
+        color: #000;
+
+        &:hover {
+            color: #fff;
+            transition: ease 0.5s;
+        }
+    }
+
+    &-right {
+        display: flex;
+        align-items: center;
+        .burger {
+            cursor: pointer;
+            padding-top: 3px;
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    .navigation {
+        &-menu {
+            display: none;
+        }
+
+        &-right-links {
+            display: none;
+        }
+    }
+}
