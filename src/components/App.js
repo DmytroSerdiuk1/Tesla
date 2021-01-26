@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Item from './Item'
 import Navigation from './Navigation'
@@ -11,12 +11,19 @@ import ModelS from '../assets/Desktop-ModelS.jpeg'
 import Model3 from '../assets/Desktop-Model3.jpeg'
 import ModelX from '../assets/Desktop-ModelX.jpeg'
 import ModelY from '../assets/Desktop-ModelY.jpeg'
+import Menu from './Menu'
 
 const App = () => {
+
+    let [menuVisible, setVisible] = useState(false);
+
+    const menuClick = () => setVisible(menuVisible = !menuVisible);
+
     return (
         <Router>
             <Fragment>
-                <Navigation/>
+                <Menu isActives={menuVisible} menuClick={menuClick}/>
+                <Navigation menuClick={menuClick}/>
                 <div className="item-wrapper">
                     <Item
                         title="Lowest Cost Solar Panels in America"

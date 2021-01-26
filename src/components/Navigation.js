@@ -4,10 +4,10 @@ import "./Navigation.scss";
 import logo from '../assets/logo.png'
 import MenuIcon from '@material-ui/icons/Menu';
 
-const Navigation = () => {
+const Navigation = ({menuClick}) => {
     return (
         <nav className="navigation">
-            <a href="https://github.com/Nomids/Pizza/blob/dev/package.json">
+            <a href="/">
                 <img className="logo" src={logo} alt="Tesla Logo"/>
             </a>
             <div className="navigation-menu">
@@ -23,7 +23,7 @@ const Navigation = () => {
                     <Link to="/" className="navigation__link">Shop</Link>
                     <Link to="/" className="navigation__link">Tesla Account</Link>
                 </div>
-                <div className="burger">
+                <div onClick={menuClick} className="burger">
                     <MenuIcon/>
                 </div>
             </div>

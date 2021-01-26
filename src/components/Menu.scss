@@ -1,0 +1,45 @@
+.menu {
+    position: fixed;
+    z-index: 69;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    background: rgba(0, 0, 0, 0.274);
+    overflow: hidden;
+    visibility: hidden;
+
+    &-wrapper {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        padding: 40px 30px;
+        background: #fff;
+        transform: translateX(100%);
+        transition: ease 0.4s;
+        overflow-y: auto;
+    }
+
+    &-link {
+        text-transform: uppercase;
+        padding: 20px 0;
+        border-bottom: 1px solid #000;
+    }
+
+    &-close {
+        cursor: pointer;
+        z-index: 100;
+        position: fixed;
+        right: 20px;
+        top: 15px;
+    }
+
+    &-active {
+        visibility: visible;
+        .menu-wrapper {
+            transition: ease 0.4s;
+            transform: translateX(0);
+        }
+    }
+}
